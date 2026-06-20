@@ -7,6 +7,7 @@ module "storage_account" {
   source               = "../../modules/storage_account"
   st                   = var.st
   resource_group_names = module.resource_group.names
+  depends_on           = [module.resource_group]
 }
 
 module "virtual_network" {
